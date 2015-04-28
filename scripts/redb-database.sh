@@ -5,5 +5,10 @@ wget -qO- http://download.rethinkdb.com/apt/pubkey.gpg | sudo apt-key add -
 sudo apt-get update
 sudo apt-get install rethinkdb -y
 
-sudo cp /home/vagrant/apps/inventory/scripts/files/rethinkdb/instance1.conf /etc/rethinkdb/instances.d/instance1.conf
+sudo apt-get -y install python-pip
+sudo pip install rethinkdb
+
+sudo cp /home/vagrant/apps/rethinkdb/scripts/files/rethinkdb/instance1.conf /etc/rethinkdb/instances.d/instance1.conf
 sudo /etc/init.d/rethinkdb restart
+
+

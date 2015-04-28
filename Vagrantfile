@@ -35,6 +35,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.box = "jcarley/ubuntu1404"
 
+  config.vm.network :private_network, ip: "33.33.33.4"
+  config.vm.network :forwarded_port, guest: 8080, host: 8080, :auto => true
+
   config.vm.provision "shell", path: "scripts/runner.sh"
 
   ## Share the default `vagrant` folder via NFS with your own options
